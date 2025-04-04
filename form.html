@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	
+	<form id="form1" name="form1" method="post"> 
+	  <table width="660" border="1">
+	    <tbody>
+	      <tr>
+	        <td width="155">First Name</td>
+	        <td width="233">
+            <input type="text" name="fname" id="fname"></td>
+	        <td width="250"><p id="message" name="message"> </p>&nbsp;</td>
+          </tr>
+	      <tr>
+	        <td>Last Name</td>
+	        <td>
+            <input type="text" name="lname" id="lname"></td>
+	        <td><p id="message2" name="message2"> </p>&nbsp;</td>
+          </tr>
+	      <tr>
+	        <td>Age</td>
+	        <td>
+            <input type="text" name="age" id="age"></td>
+	        <td><p id="message3" name="message3"> </p>&nbsp;</td>
+          </tr>
+	      <tr>
+	        <td>Username</td>
+	        <td colspan="2"><p id="user" name="user"> </p>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+	</form>
+<script>
+	function validateme() 
+	{
+	  if(document.form1.fname.value=="")
+		  {
+			  document.getElementById("message").innerHTML="Enter your first name"
+			  document.form1.fname.style.backgroundColor="yellow"
+			  return false
+		  }
+		else if(document.form1.lname.value=="")
+				{
+					document.getElementById("message2").innerHTML="Enter your last name"
+					document.form1.fname.style.backgroundColor=""
+					document.form1.lname.style.backgroundColor="yellow"
+					return false
+				}
+		else if(document.form1.age.value=="")
+				{
+					document.getElementById("message3").innerHTML="Enter your age"
+					document.form1.lname.style.backgroundColor=""
+					document.form1.age.style.backgroundColor="yellow"
+					return false
+				}
+		else document.form1.age.style.backgroundColor=""
+		
+		
+	var firstname=document.form1.fname.value
+	var lastname=document.form1.lname.value
+	var userage=document.form1.age.value
+		// variables to generate username
+	document.getElementById("user").innerHTML=firstname+lastname+"."+userage	
+		document.getElementById("user").style.backgroundColor="#FD03FF"
+	}
+	</script>
+<input type="button" name="button" id="button" value="Submit" onClick="validateme()">
+</body>
+</html>
